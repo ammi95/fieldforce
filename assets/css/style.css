@@ -62,6 +62,9 @@ body {
     font-size: 15px;
     position: relative;
     transition: 0.3s;
+    background: #1e1b3a99;
+    padding: 10px 25px;
+    border-radius: 25px;
 }
 
 /* Hover underline animation */
@@ -263,10 +266,12 @@ video {
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
-.hero-buttons .btn-outline{
+
+.hero-buttons .btn-outline {
     color: #ffffff !important;
     border: 1px solid #ffffff !important;
 }
+
 /* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
 
@@ -294,6 +299,21 @@ video {
 
     .hero-image img {
         max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    
+
+    video {
+        display: none;
+    }
+
+    .hero-content {
+        position: relative;
+        margin: 0;
+        padding-top: 50px;
+        padding-bottom: 20px;
     }
 }
 
