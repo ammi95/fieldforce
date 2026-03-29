@@ -9,6 +9,20 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/auth.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .input-box {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #666;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,6 +41,7 @@
                 <div class="input-box" style="margin-bottom: 0;">
                     <input type="password" id="password" required>
                     <label>Password</label>
+                    <i class="fa-solid fa-eye toggle-password" id="togglePassword"></i>
                 </div>
 
                 <p class="error" id="errorMsg"></p>
@@ -68,10 +83,20 @@
         });
 
         /* PASSWORD TOGGLE */
-        function togglePassword() {
-            const pass = document.getElementById("password");
-            pass.type = pass.type === "password" ? "text" : "password";
-        }
+        // function togglePassword() {
+        //     const pass = document.getElementById("password");
+        //     pass.type = pass.type === "password" ? "text" : "password";
+        // }
+        const togglePassword = document.getElementById("togglePassword");
+        const password = document.getElementById("password");
+
+        togglePassword.addEventListener("click", function () {
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+
+            this.classList.toggle("fa-eye");
+            this.classList.toggle("fa-eye-slash");
+        });
     </script>
 
 </body>
